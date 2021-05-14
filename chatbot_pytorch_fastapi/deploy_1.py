@@ -143,10 +143,3 @@ def predict_intent(data:str):
 if __name__=="main":
     uvicorn.run(app,host='127.0.0.1',port=8000)
     
-    
-"""
-@app.get("/predict/{sentence}")
-def predict(sentence: str):
-    pred = prediction(sentence)[0][0]
-    return {"message": str(pred)}
-"""
