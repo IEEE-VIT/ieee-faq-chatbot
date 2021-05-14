@@ -121,12 +121,13 @@ def convert(question):
 
 @app.get("/")
 def index():
-    return {"message": "stranger"}
+    return {"IEEE Chatbot": "v2"}
 
 
-@app.get("/Welcome")
+@app.get("/trail")
 def get_name(name:str):
     return{'trail':f'{name}'}
+
 
 @app.post('/predict')
 def predict_intent(data:str):
