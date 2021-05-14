@@ -11,9 +11,8 @@ import numpy as np
 import time
 import conversions
 
-device="cuda"
-train_on_gpu=True
-
+status=torch.cuda.is_available()
+#status=False
 
 vocab_size = 4163
 output_size = 27
@@ -24,8 +23,6 @@ n_layers = 1
 
 #Semantic classifier that is used for classifying intent of the question.
 class Semantic_Classifier(nn.Module):
-   
-
     def __init__(self, vocab_size, output_size, embedding_dim, hidden_dim, n_layers, drop_prob=0.5):
         super(Semantic_Classifier, self).__init__()
 
@@ -63,7 +60,7 @@ class Semantic_Classifier(nn.Module):
         
         weight = next(self.parameters()).data
         
-        if (train_on_gpu):
+        if (status):
             hidden = (weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().cuda(),
                   weight.new(self.n_layers, batch_size, self.hidden_dim).zero_().cuda())
         else:
@@ -74,16 +71,19 @@ class Semantic_Classifier(nn.Module):
 
 #net1 with fetures defined above
 net_1=Semantic_Classifier(vocab_size, output_size, embedding_dim, hidden_dim, n_layers)
-net_1.cuda()
+if status:
+    net_1.cuda()
 net_1.load_state_dict(torch.load("ieeesite_v2.pt"))
 net_1.eval()
 val_h=net_1.init_hidden(1)
 
 def custom_forward(data):
+    data=conversions.convert(data)  
     
     hidden=val_h
     _,output=torch.topk(net_1(data,hidden)[0],1)
     
     label=conversions.int_to_label(output.item())
     output=conversions.label_to_response(label)
+    #print(val_h)
     return label,output
