@@ -22,11 +22,6 @@ def pad_features(reviews_ints, seq_length=20):
 f=open("word_to_int.pkl","rb")
 word_to_int=pickle.load(f)
 
-f=open("int_to_word.pkl","rb")
-int_to_word=pickle.load(f)
-
-f=open("label_to_int.pkl","rb")
-label_to_int=pickle.load(f)
 
 f=open("int_to_label.pkl","rb")
 in_to_label=pickle.load(f)
