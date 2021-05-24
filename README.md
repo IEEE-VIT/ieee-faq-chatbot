@@ -40,3 +40,5 @@ Before proceeding make sure you have [Python 3.6 or above](https://www.python.or
   uvicorn main:app --reload
   ```
   Once the server has started successfully, go to http://127.0.0.1:8000/docs to test your API. 8000 is the default port, which can be changed in [main.py](https://github.com/IEEE-VIT/Chatbot/blob/master/main.py)
+  
+  *Note: Training the models is not required for installing and using the API with above mentioned steps. This is because, both [tensorflow_model.py](https://github.com/IEEE-VIT/Chatbot/blob/master/tensorflow_model.py) and [pytorch_model.py]() directly load the trained and saved model with ```.h5``` and ```.pkl``` extensions respectively.
