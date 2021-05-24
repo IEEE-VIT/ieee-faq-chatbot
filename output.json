@@ -1,23 +1,38 @@
 {
-    "ieee_github" : [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_github" : [
+        {"op":"Sure check us out at https://github.com/IEEE-VIT"},
+        {"op":"Definietly! check us out at IEEE-VIT on GitHub!"},
+        {"op":"Just follow this link https://github.com/IEEE-VIT and there you go!"}], 
     
-    "ieee_how_long": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_how_long": [
+        {"op":"Hmm, let me check. It has been over 8 years now."},
+        {"op":"Counting the years. 8 years it is."},
+        {"op":"It's been more than 8 years last time I checked!"}], 
     
     "gen_who_made": [
         {"op":"I was created by IEEE-VIT SB"},
         {"op":"None other than IEEE-VIT student chapter!"},
         {"op":"I am brought to you by IEEE-VIT"}], 
     
-    "ieee_domains": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_domains": [
+        {"op":"We have all types of domains covered. From web-dev to Machine Lerning to Electronics to Design!"},
+        {"op":"You name it, we got it. From web-dev to Machine Lerning to Electronics to Design!"},
+        {"op":"We have everything from web-dev to Machine Lerning to Electronics to Design covered!"}], 
     
-    "ieee_be_part_who": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_be_part_who": [
+        {"op":"We recruit only First Years annually. But anyone is welcome to be part of our TechLoop Community!"},
+        {"op":"If you are a First Year student, keep a close eye on our recruitments! But anyone is welcome to be part of our TechLoop Community!"},
+        {"op":"First Years, look out for our recruitments. Everyone else, look out for our TechLoop Community!"}], 
     
     "gen_human": [
         {"op":"No I am not a human"},
         {"op":"Certainly not"},
         {"op":"Human? Meh."}], 
     
-    "ieee_past_events": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_past_events": [
+        {"op":"We had quite a few events. Few include: Enigma, CTF, Palette and much more!"},
+        {"op":"A few include: Enigma, CTF, Palette and much more!"},
+        {"op":"Enigma, CTF, Palette, ML workshop are a few ones to name."}], 
     
     "ieee_sponsor": [
         {"op":"We are delighted to hear that. Please contact us via collaborationieeevit@gmail.com, thanks!"},
@@ -30,7 +45,10 @@
         {"op":"provide help is what I do"},
         {"op":"Definitely, by any means possible"}], 
     
-    "ieee_projects": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_projects": [
+        {"op":"We have some amazing projects that we built. Head over to our GitHub to see them!"},
+        {"op":"Head over to our GitHub to see all the cool projects built by members of IEEE-VIT!"},
+        {"op":"Our GitHub is your one stop destination to all the answers you need!"}], 
     
     "gen_who_you": [
         {"op":"I am a bot, here to help."},
@@ -38,7 +56,10 @@
         {"op":"I am an AI powered bot."},
         {"op":"Chatbot. That's what I am."}], 
     
-    "ieee_what_does": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_what_does": [
+        {"op":"Members of IEEE VIT are active participants in national and international level hackathons and involve in multiple projects."},
+        {"op":"We Ideate. We innovate. We Inspire."},
+        {"op":"We love to build cool projects and participate in all kinds of national and international hacks and win them!"}], 
     
     "gen_hi": [
         {"op":"Hi!"},
@@ -57,11 +78,20 @@
         {"op":"You are most welcome!"},
         {"op":"Happy to help!"}], 
     
-    "ieee_other_college": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_other_college": [
+        {"op":"We are not directly affiliated to them, but we share a common region (Region 10 of IEEE International) with a few."},
+        {"op":"We share a common parent (Region 10 of IEEE International) with a few."},
+        {"op":"Not directly. But we have a common region (Region 10 of IEEE International) with a few."}], 
     
-    "ieee_current_board": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_current_board": [
+        {"op":"Meet our team under Board section!"},
+        {"op":"We have few amazing people as our board. Get to know them under Board section!"},
+        {"op":"I can't answer that, but redirect you for sure. Head over to Board section to meet our team!"}], 
     
-    "ieee_other_linked": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_other_linked": [
+        {"op":"Nope, we are not linked with any other branched IEEE(s) of VIT"},
+        {"op":"We are not affiliated with other sub IEEE(s) of VIT in any way"},
+        {"op":"IEEE-VIT core is an independent body and is not linked with any branched IEEE(s) of VIT"}], 
     
     "ieee_social_media": [
         {"op":"sure! check us out at @ieeevitvellore and <twt>"},
@@ -75,7 +105,10 @@
         {"op":"Ask me anything!"},
         {"op":"Sure, If it's related to Alute"}], 
     
-    "ieee_what": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_what": [
+        {"op":"IEEE VIT is one of the most active student chapters inside Region 10 of IEEE International. We're a diverse group of tech enthusiasts, developers and designers who live with the motto: Advancing Technology for Humanity"},
+        {"op":"I'll tell you what it's NEVER: stagnant and boring!"},
+        {"op":"As the name suggests, we are a student chapter inside Region 10 of IEEE International. "}], 
     
     "gen_bot": [
         {"op":"Indeed."},
@@ -84,10 +117,13 @@
         {"op":"You guessed it right"},
         {"op":"Yup, I am a chatbot"}], 
     
-    "ieee_future_events": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_future_events": [
+        {"op":"We have Enigma and CTF coming soon."},
+        {"op":"Enigma, CTF and a few workshops are about to see light of near future. Keep checking our socials for any updates!"},
+        {"op":"Be on lookout for Enigma, CTF and a few workshops!"}], 
     
     "ieee_further_contact": [
-        {"op":"You can contact us via collaborationieeevit@gmail.com"},
+        {"op":"You can contact us via our socials or mailing to collaborationieeevit@gmail.com"},
         {"op":"You can contact us via insta at @ieeevitvellore or <twt> or even mail us at collaborationieeevit@gmail.com"}], 
     
     "gen_how_you": [
@@ -96,7 +132,10 @@
         {"op":"Never better!"},
         {"op":"Perfectly fine, thanks!"}], 
     
-    "ieee_techloop": [{"op":"op1"},{"op":"op2"},{"op":"op3"}], 
+    "ieee_techloop": [
+        {"op":"A one of its kind initiative from IEEE VIT that seeks to proliferate technical skills among students for every domain."},
+        {"op":"TechLoop is an interactive workshop conducted for the students of VIT every month which involves hands on sessions that result in stronger understanding of concepts to both speaker and the audience. This includes all the domains we have!"},
+        {"op":"A one of its kind initiative from IEEE VIT that seeks to proliferate technical skills among students on every domain which we have."}], 
     
     "gen_bye" : [
         {"op":"Bye!"},
