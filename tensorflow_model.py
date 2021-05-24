@@ -1,7 +1,6 @@
 import re
 import pandas as pd
 import numpy as np
-import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -132,3 +131,4 @@ def ieee_faq_bot(user_query):
     predicted_intent = sort_predictions(all_predictions, unique_intent)
 
     return predicted_intent
+
