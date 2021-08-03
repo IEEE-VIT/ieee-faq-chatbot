@@ -5,7 +5,7 @@
 * This project is built from scratch without using pre existing platforms such as [Dialogflow](https://cloud.google.com/dialogflow/docs) or [Amazon Lex](https://aws.amazon.com/lex/).
 * Further, an API is created for the same using [FastAPI](https://fastapi.tiangolo.com/).
 ## Model
-* Two separate models were built for intent classification and are available in [model directory](https://github.com/IEEE-VIT/Chatbot/tree/master/model):
+* Two separate models were built for intent classification and are available in [model_training directory](https://github.com/IEEE-VIT/Chatbot/tree/master/model):
  1. [TensorFlow Model](https://github.com/IEEE-VIT/Chatbot/tree/master/model/tensorflow%20model) 
  2. [PyTorch Model](https://github.com/IEEE-VIT/Chatbot/tree/master/model/pytorch%20model)
 * Both the models are independently working and perform the same action of classifying input query into fixed set intents.

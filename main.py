@@ -1,10 +1,11 @@
 import uvicorn
 import time
 from fastapi import FastAPI
+from pydantic import BaseModel 
 from fastapi.responses import PlainTextResponse
-from tensorflow_model import ieee_faq_bot
+from tensorflow_src.tensorflow_model import ieee_faq_bot
 from user_output import user_output
-from pytorch_model import custom_forward
+from pytorch_src.pytorch_model import custom_forward
 
 def tensorflow_model(user_query):
     # classify the input query as one of the intents using tensorflow
@@ -16,10 +17,13 @@ def pytorch_model(user_query):
     make_prediction = custom_forward(user_query)
     return make_prediction
 
-# create app object with title and description 
-app = FastAPI(
+app = FastAPI(   # create app object with title and description 
     title="IEEE FAQ chatbot",
     description="Answer all frequently asked questions")  
+
+class data(BaseModel):
+    user_input: str
+    model_selection: int
 
 @app.get('/')
 def index():
@@ -27,11 +31,12 @@ def index():
     return message
 
 @app.post('/chatbot',description="enter 1 under model_selection for tensorflow model and 2 for pytorch model")
-def chatbot(query:str, model_selection:int):
+def chatbot(data:data):
     res_time=time.time()
+    data=data.dict()
     # load input query and model by user
-    user_query = query  
-    selected_model = model_selection
+    user_query = data['user_input']  
+    selected_model = data['model_selection']
 
     if selected_model == 1:
         predicted_intent=tensorflow_model(user_query)
@@ -39,8 +44,11 @@ def chatbot(query:str, model_selection:int):
     elif selected_model == 2:
         predicted_intent=pytorch_model(user_query)
         model_in_use = "PyTorch"
+    elif selected_model == 0:
+        predicted_intent=tensorflow_model(user_query)
+        model_in_use = "TensorFlow"
     else :
-        raise Exception("Please enter a valid model")
+        raise ValueError
 
     #generate final output for given query
     final_user_output = user_output(predicted_intent)
@@ -55,7 +63,10 @@ def chatbot(query:str, model_selection:int):
 
 @app.exception_handler(Exception)
 async def validation_exception_handler(request,exc):
-    return PlainTextResponse("Enter a valid model. 1 for tensorflow and 2 for pytorch", status_code=400)
+    if ValueError:
+        return PlainTextResponse("Enter a valid model. 1 for tensorflow and 2 for pytorch under "'model_selection'" in request body", status_code=400)
+    else:
+        return PlainTextResponse("Something went wrong",status_code=400)
 
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=8000, Reload=True)
