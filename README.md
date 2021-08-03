@@ -34,7 +34,7 @@ Before proceeding make sure you have [Python 3.8 or above](https://www.python.or
   ```
   pip install -r requirements.txt
   ```
-  *Important note: for installing torch, direct wheel file was used in [requirements.txt](https://github.com/IEEE-VIT/Chatbot/blob/master/requirements.txt) which is python version and OS specific. The used ```.whl``` file is for Python 3.8 and Linux OS. If you have a different version of Python or OS installed, you need to replace the existing ```.whl``` file with the correct one in [requirements.txt](https://github.com/IEEE-VIT/Chatbot/blob/master/requirements.txt). All other files for different Python versions and OS can be found [here](https://download.pytorch.org/whl/torch_stable.html).
+  *Important note: for installing torch 1.7.1, direct wheel file was used in [requirements.txt](https://github.com/IEEE-VIT/Chatbot/blob/master/requirements.txt) which is python version and OS specific. The used ```.whl``` file is for Python 3.8 and Linux OS. If you have a different version of Python or OS installed, you need to replace the existing ```.whl``` file with the correct one in [requirements.txt](https://github.com/IEEE-VIT/Chatbot/blob/master/requirements.txt). All other files for different Python versions and OS can be found [here](https://download.pytorch.org/whl/torch_stable.html). Make sure to get correct torch version (1.7.1) as well for PyTorch model.
 
   4. Start the server on localhost:
   ```
