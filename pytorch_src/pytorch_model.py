@@ -2,7 +2,7 @@ import torch
 from torch import nn
 import numpy as np
 import time
-import conversions_test
+import pytorch_src.conversions_test
 
 status=torch.cuda.is_available()
 vocab_size = 4163
@@ -61,7 +61,7 @@ class Semantic_Classifier(nn.Module):
 net_1=Semantic_Classifier(vocab_size, output_size, embedding_dim, hidden_dim, n_layers)
 if status:
     net_1.cuda()
-net_1.load_state_dict(torch.load("ieee_faq_bot.pt",map_location='cpu'))
+net_1.load_state_dict(torch.load("pytorch_src/ieee_faq_bot.pt",map_location='cpu'))
 net_1.eval()
 val_h=net_1.init_hidden(1)
 

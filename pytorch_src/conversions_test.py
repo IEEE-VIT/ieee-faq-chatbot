@@ -32,7 +32,7 @@ def preprocess(text):
 def convert(question):
     question=preprocess(question).split()
     q=[]
-    with open("word_to_int.pkl","rb") as f:
+    with open("pytorch_src/word_to_int.pkl","rb") as f:
         word_to_int=pickle.load(f)
     for i in question:
         q.append(word_to_int[i])
@@ -48,7 +48,7 @@ def device():
     return status
 
 def int_to_label(num):
-    with open("int_to_label.pkl","rb") as f:
+    with open("pytorch_src/int_to_label.pkl","rb") as f:
         in_to_label=pickle.load(f)
     return (in_to_label[num])
 

@@ -16,7 +16,7 @@ def load_dataset(filename):
     questions = list(df["question"])
     return (intent, questions)
 
-intent, questions = load_dataset("augmented_data.csv")
+intent, questions = load_dataset("tensorflow_src/augmented_data.csv")
 
 #specify all the unique intents in the data
 unique_intent = [
@@ -85,7 +85,7 @@ def padding_doc(encoded_doc, max_length):
 padded_doc = padding_doc(encoded_doc, max_length)
 
 #load the pre-trained model
-loaded_model = load_model("ieee_faq_bot.h5")
+loaded_model = load_model("tensorflow_src/ieee_faq_bot.h5")
 
 def predictions(user_query):
     #clean and tokenize input user query
