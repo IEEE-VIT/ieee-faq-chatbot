@@ -1,5 +1,5 @@
 {
-    "ieee_github" : [
+    "ieee_github": [
         {"op":"Sure check us out at https://github.com/IEEE-VIT"},
         {"op":"Definietly! check us out at IEEE-VIT on GitHub!"},
         {"op":"Just follow this link https://github.com/IEEE-VIT and there you go!"}], 
@@ -94,9 +94,16 @@
         {"op":"IEEE-VIT core is an independent body and is not linked with any branched IEEE(s) of VIT"}], 
     
     "ieee_social_media": [
-        {"op":"sure! check us out at @ieeevitvellore and <twt>"},
-        {"op":"here you go! @ieeevitvellore and <twt>"},
-        {"op":"Certainly! @ieeevitvellore and <twt>"}], 
+        {
+            "op": "sure! check us out at @ieeevitvellore on Instagram and Twitter!"
+        },
+        {
+            "op": "here you go! @ieeevitvellore on Instagram and Twitter."
+        },
+        {
+            "op": "Certainly! @ieeevitvellore on Instagram or Twitter!"
+        }
+    ],
     
     "gen_query": [
         {"op":"Shoot away!"},
@@ -124,7 +131,10 @@
     
     "ieee_further_contact": [
         {"op":"You can contact us via our socials or mailing to collaborationieeevit@gmail.com"},
-        {"op":"You can contact us via insta at @ieeevitvellore or <twt> or even mail us at collaborationieeevit@gmail.com"}], 
+        {
+            "op": "You can contact us via Insta or Twitter at @ieeevitvellore or even mail us at collaborationieeevit@gmail.com"
+        }
+    ],
     
     "gen_how_you": [
         {"op":"I am good, thanks for asking!"},
@@ -141,7 +151,22 @@
         {"op":"Bye!"},
         {"op":"Goodbye!"},
         {"op":"Until next time!"},
-        {"op":"Adios!"}]
+        {
+            "op": "Adios!"
+        }
+    ],
 
+    "gen_bad": [
+        {"op": "Hey, mind your language!"},
+        {"op": "Don't talk to me like that :/"},
+        {"op": "Would you mind your language please?"},
+        {"op": "Hey, that's not cool, mind it!"}
+    ],
+    "invalid_query": [
+        {"op": "I didn't get you, could you please try again?"},
+        {"op": "I am not sure I understand, could you please try again?"},
+        {"op": "I am not sure what that means, could you try again?"},
+        {"op": "I don't know what that means, please try again"}
+    ]
 
 }
