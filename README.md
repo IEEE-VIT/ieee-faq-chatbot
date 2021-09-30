@@ -1,3 +1,7 @@
+<p align="center"><img width="40%" src="https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg"/></p>
+
+<p align="center">Answer all frequently asked questions!</p>
+
 # IEEE FAQ Chatbot
 ***
 ## About 
@@ -41,7 +45,50 @@ Before proceeding make sure you have [Python 3.8 or above](https://www.python.or
   uvicorn main:app --reload
   ```
   Once the server has started successfully, go to http://127.0.0.1:8000/docs to test your API. 8000 is the default port, which can be changed in [main.py](https://github.com/IEEE-VIT/Chatbot/blob/master/main.py) to any unused port.
-  
-  *Note: Training the models is not required for installing and using the API with above mentioned steps. This is because, both [tensorflow_model.py](https://github.com/IEEE-VIT/Chatbot/blob/master/tensorflow_src/tensorflow_model.py) and [pytorch_model.py](https://github.com/IEEE-VIT/IEEE-FAQ-Chatbot/blob/master/pytorch_src/pytorch_model.py) directly load the trained and saved model with ```.h5``` and ```.pt``` extensions respectively. 
+
+## Install using docker
+  To install via docker, make sure you have [docker desktop](https://www.docker.com/products/docker-desktop) installed if you are working on windows.
+  1. Clone this repository:
+  ``` 
+  git clone https://github.com/IEEE-VIT/IEEE-FAQ-Chatbot.git
+  ```
+  2. cd into root directory and build the image using Dockerfile:
+  ```
+  docker build -t myimage .
+  ```
+  3. Once the image has been built, start the container:
+  ```
+  docker run -d --name mycontainer -p 8000:8000 myimage
+  ```
+  This will start the container at localhost port 8000. Go to http://127.0.0.1:8000/docs to test your API. 8000 is the default port, which can be changed in [Dockerfile](https://github.com/IEEE-VIT/Chatbot/blob/master/Dockerfile) to any unused port.
+
+## Contributing
+1. Fork this repository.
+2. Clone the forked repository in your local machine and install it using above mentioned steps.
+3. Create and checkout a new branch using:
+``` 
+git branch -m new-feature
+```
+You can use any branch name you like!
+
+4. make all the changes you think will help improve this project! Now, open a PR by following these commands:
+```
+git add .
+```
+```
+git commit -m "a short description about your commit"
+```
+```
+git push -u origin new-feature
+```
+5. Now, go to your browser and open the forked repo and then raise a PR to ```master``` branch of this repo.
+
+That's all. Now just hang tight while our maintainers review your PR and merge and close them! 
+
+If you are new to contributing, checkout [contributing guidelines](). Do checkout issues labelled as ```hacktoberfest``` for some goodies and a T-shirt!
+***
+*Note: Training the models is not required for installing and using the API with above mentioned steps. This is because, both [tensorflow_model.py](https://github.com/IEEE-VIT/Chatbot/blob/master/tensorflow_src/tensorflow_model.py) and [pytorch_model.py](https://github.com/IEEE-VIT/IEEE-FAQ-Chatbot/blob/master/pytorch_src/pytorch_model.py) directly load the trained and saved model with ```.h5``` and ```.pt``` extensions respectively. 
   
   If you wish to see the training code, it can be found inside [model_training directory](https://github.com/IEEE-VIT/Chatbot/tree/master/model_training).
+***
+<p align="center">Consider leaving a :star: if you liked the project and organization :)</p>
