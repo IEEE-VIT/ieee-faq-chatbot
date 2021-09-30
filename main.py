@@ -52,8 +52,6 @@ def prof_check(user_query):
         return False
 
 #add to mongo
-
-
 def add_to_mongo(user_query, predicted_intent):
     query_append_status="appended"
     try:

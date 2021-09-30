@@ -1,6 +1,7 @@
 import re
 import pandas as pd
 import numpy as np
+import nltk
 from tensorflow import keras
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -16,7 +17,8 @@ def load_dataset(filename):
     questions = list(df["question"])
     return (intent, questions)
 
-intent, questions = load_dataset("tensorflow_src/augmented_data.csv")
+
+intent, questions = load_dataset("augmented_data.csv")
 
 #specify all the unique intents in the data
 unique_intent = [
@@ -73,7 +75,7 @@ def max_length(cleaned_words):
 
 word_tokenizer = create_tokenizer(cleaned_words)
 max_length = max_length(cleaned_words)
-
+#print(max_length)
 def encoding_doc(token, cleaned_words):
     return token.texts_to_sequences(cleaned_words)
 
@@ -85,13 +87,19 @@ def padding_doc(encoded_doc, max_length):
 padded_doc = padding_doc(encoded_doc, max_length)
 
 #load the pre-trained model
-loaded_model = load_model("tensorflow_src/ieee_faq_bot.h5")
+loaded_model = load_model("ieee_faq_bot.h5")
 
 def predictions(user_query):
     #clean and tokenize input user query
     clean_user_query = re.sub(r"[^ a-z A-Z 0-9]", " ", user_query)
     clean_user_query = word_tokenize(clean_user_query)
     clean_user_query = [w.lower() for w in clean_user_query]
+    #print(clean_user_query)
+    if len(clean_user_query) <= max_length:
+        clean_user_query = clean_user_query
+    else:
+        clean_user_query = clean_user_query[0:max_length]
+    #print(clean_user_query)
     tokenized_user_query = word_tokenizer.texts_to_sequences(clean_user_query)
 
     #filter unknown words
@@ -102,9 +110,9 @@ def predictions(user_query):
     tokenized_user_query_len=len(tokenized_user_query)
     tokenized_user_query = np.array(tokenized_user_query).reshape(1, tokenized_user_query_len)
     ready_user_query = padding_doc(tokenized_user_query, max_length)
-
+    #print(ready_user_query)
     #make prediction
-    all_predictions = loaded_model.predict(ready_user_query)
+    all_predictions = loaded_model(ready_user_query)
 
     return all_predictions
 
@@ -120,9 +128,13 @@ def sort_predictions(all_predictions, classes):
     #sort predictions array in dec order
     predictions = -np.sort(-predictions)
     #get the intent with highest probability
-    pred_intent = classes[0]
-
-    return pred_intent
+    if predictions[0] >= 0.95:
+        pred_intent = classes[0]
+        print(predictions[0])
+        return pred_intent
+    else:
+        pred_intent = "invalid_query"
+        return pred_intent
 
 
 def ieee_faq_bot(user_query):
